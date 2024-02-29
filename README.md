@@ -7,6 +7,10 @@
 export domain=example.com
 export certbot_home=/data/var/lib/certbot
 
+mkdir -p ${certbot_home}
+mkdir -p ${certbot_home}/credentials
+mkdir -p ${certbot_home}/letsencrypt
+
 tee ${certbot_home}/letsencrypt/${domain}.ini <<-EOF
 agree-tos = true
 no-eff-email = true
@@ -34,6 +38,10 @@ docker run --rm \
 ```
 export domain=example.com
 export certbot_home=/data/var/lib/certbot
+
+mkdir -p ${certbot_home}
+mkdir -p ${certbot_home}/credentials
+mkdir -p ${certbot_home}/letsencrypt
 
 tee ${certbot_home}/letsencrypt/${domain}.ini <<-EOF
 agree-tos = true
